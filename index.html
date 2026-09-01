@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Tanvir Goraya | AI Executive & Chief Scientist</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --accent-blue: #38bdf8;
+            --accent-teal: #2dd4bf;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-blue);
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        nav {
+            background: var(--bg-card);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-teal);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            color: var(--accent-blue);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Interactive Dashboard Widget Simulation */
+        .interactive-box {
+            background: #111827;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .panel-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .control-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        select, input[type="range"] {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            color: var(--text-main);
+            border-radius: 4px;
+        }
+
+        .output-display {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-blue);
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .output-display h4 {
+            color: var(--accent-teal);
+            margin-bottom: 5px;
+        }
+
+        .output-display p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pub-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .pub-authors {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+        }
+
+        .pub-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <div class="container hero">
+            <h1>Dr. Tanvir Y. <span>Goraya</span></h1>
+            <div class="subtitle">Director of Artificial Intelligence and Big Data</div>
+            <p>Computational scientist and artificial intelligence architect specializing in Distributed Cognition, structural NP-Complete optimization models, and visual causal knowledge translation systems.</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#core-tech">Methodologies</a>
+        <a href="#simulation">Theory Garden</a>
+        <a href="#publications">Publications</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Methodologies Section -->
+        <section id="core-tech">
+            <h2>Algorithmic Architectures</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>NP-Complete Optimization</h3>
+                    <p>Pioneering architectures utilizing multi-layer associative neural matrices to transform heavy combinatorial search spaces. Compresses complex, multi-objective optimization timelines down to minutes.</p>
+                </div>
+                <div class="card">
+                    <h3>The TG-Engine</h3>
+                    <p>A proprietary computational architecture engineered specifically for processing non-deterministic enterprise problem spaces, real-time complex pattern matching, and business simulation rules.</p>
+                </div>
+                <div class="card">
+                    <h3>MindModeler™ Systems</h3>
+                    <p>Designed to map and transform unstructured, highly subjective human expertise into explicit computational workflows, enabling robust structural simulation across enterprise ecosystems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Simulation Demo Section -->
+        <section id="simulation">
+            <h2>Theory Garden Engine Simulation</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Explore a simulated visualization demonstrating how the TG-Engine processes abstract human constraints and dynamically transforms distributed team insights into structured causal decision models.</p>
+            
+            <div class="interactive-box">
+                <div class="panel-flex">
+                    <div class="control-group">
+                        <label for="complexity-level">Combinatorial Space Complexity</label>
+                        <select id="complexity-level" onchange="runSimulation()">
+                            <option value="low">Standard Linear Space (Low Dimensions)</option>
+                            <option value="medium">Highly Mutated Multi-Criteria Bounds</option>
+                            <option value="high" selected>NP-Hard Combinatorial Problem Horizon</option>
+                        </select>
+                        <br><br>
+                        <label for="cognitive-sync">Cognitive Alignment Threshold</label>
+                        <input type="range" id="cognitive-sync" min="10" max="100" value="85" oninput="runSimulation()">
+                    </div>
+
+                    <div class="output-display" id="sim-output">
+                        <!-- Content generated dynamically via JavaScript -->
+                        <h4>Engine Initializing...</h4>
+                        <p>Awaiting constraint parameter adjustment profiles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Scholarly Output & Research</h2>
+            <ul class="pub-list">
+                <li>
+                    <div class="pub-title">"IT for Creativity in Problem Formulation"</div>
+                    <div class="pub-authors">Richard J. Boland, Tanvir Goraya, Nicholas Berente, Sean Hansen</div>
+                    <div class="pub-meta">Proceedings of the International Conference on Information Systems (ICIS)</div>
+                </li>
+                <li>
+                    <div class="pub-title">"A Design Artifact for Distributed Cognition"</div>
+                    <div class="pub-authors">Richard J. Boland, Tanvir Goraya, Sean Hansen</div>
+                    <div class="pub-meta">Design Science & Systems Engineering Working Frameworks</div>
+                </li>
+                <li>
+                    <div class="pub-title">"Knowledge Matrix, a Multi-Objective Decision Aide: Application to Rigging in Aluminum Sand Casting"</div>
+                    <div class="pub-authors">Thomas Ellermann, Kathleen Wilson, Karsten Nielsen, Tanvir Goraya, Kam Komeyli, S. LeClair</div>
+                    <div class="pub-meta">ASM Materials Solutions Conference Proceedings</div>
+                </li>
+            </ul>
+        </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Tanvir Y. Goraya. Senior Associate, Information Design Studio.</p>
+            <p>Case Western Reserve University, Weatherhead School of Management. <a href="https://www.linkedin.com/in/tanvirgorayaphd" target="_blank">Connect via LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function runSimulation() {
+            const complexity = document.getElementById('complexity-level').value;
+            const syncLevel = document.getElementById('cognitive-sync').value;
+            const outputBox = document.getElementById('sim-output');
+
+            let runtime, stateText, borderAccent;
+
+            if (complexity === 'low') {
+                runtime = "0.04 Seconds";
+                stateText = "Linear optimization space matched. Processing path convergence immediately verified.";
+                borderAccent = "#2dd4bf";
+            } else if (complexity === 'medium') {
+                runtime = "12.8 Seconds";
+                stateText = "Analyzing non-linear patterns. Eliminating structural dead-ends to match associative rules.";
+                borderAccent = "#fbbf24";
+            } else {
+                // High complexity / NP-hard simulated compression 
+                runtime = "2.42 Minutes";
+                stateText = "Combinatorial horizon detected. TG-Engine energy landscapes mapped successfully. Reduced exponential lookup runtime to stable convergence.";
+                borderAccent = "#38bdf8";
+            }
+
+            outputBox.style.borderLeftColor = borderAccent;
+            outputBox.innerHTML = `
+                <h4>Simulation Status: Convergence Reached</h4>
+                <p><strong>Computed Runtime:</strong> ${runtime} (Compressed from Infinity)</p>
+                <p><strong>Cognitive Consistency Check:</strong> ${syncLevel}% Stakeholder Cohesion Alignment</p>
+                <p style="margin-top: 8px; font-size: 0.9rem; color: #94a3b8;"><em>${stateText}</em></p>
+            `;
+        }
+
+        // Initialize display automatically on load
+        window.onload = runSimulation;
+    </script>
+</body>
+</html>
